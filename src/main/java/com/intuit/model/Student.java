@@ -65,4 +65,7 @@ public class Student {
                 && Objects.equals(lastName, other.lastName);
     }
 
+    public void setId(Long aLong) {
+        this.id = aLong;
+    }
 }

@@ -1,5 +1,7 @@
 package com.intuit;
 
+import com.intuit.dao.RegistrationDAO;
+import com.intuit.dao.SimpleRegistrationDAO;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -12,9 +14,19 @@ public class App {
     public static void main(String[] args) throws
             StudentAlreadyRegisteredException {
 
+        //WITHOUT SPRING - we would normally do something like this:
+        // here we have the dependency choice hardcoded
+//        RegistrationDAO rDAO = new SimpleRegistrationDAO();
+//
+//        RegistrationService rsObject = new RegistrationService( rDAO );
+//
+
+      //  RegistrationService regService = new RegistrationService(new SimpleRegistrationDAO());
+
+
         // Open beans.xml where in this file there is a directive
         // called component-scan Spring scans the files in the
-        // package declared looking for annotations like
+        // package declared (com.intuit) looking for annotations like
         // @Component and @Autowired.  Spring will then do the
         // wiring for you.
 
@@ -40,5 +52,10 @@ public class App {
 
         System.out.println("Student Registered with ID: "
                 + studentID2);
+
+        Long val = 60L;
+        String firstname = registrationService.findStudentName(val);
+        System.out.println(firstname);
+
     }
 }

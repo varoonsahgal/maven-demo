@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 import com.intuit.model.Student;
 
 // Component tells Spring to create an object from the class and
-// identify it as RegistrationDAO type.  This object is a Spring   // bean If any other component
+// identify it as RegistrationDAO type.  This object is a Spring
+// bean If any other component
 // requires a RegistrationDAO type it will use this object created
 // by Spring.
 

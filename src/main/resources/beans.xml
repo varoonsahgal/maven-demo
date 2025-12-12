@@ -9,4 +9,10 @@
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <context:component-scan base-package="com.intuit" />
+
+    <bean id="registrationService" class="com.intuit.service.RegistrationService">
+            <constructor-arg ref="mapDao"/>
+    </bean>
 </beans>
+
+
